@@ -1,5 +1,6 @@
 
 ; REMEMBER 
+;ANSWER MUST CONTAIN WITHIN 4 digit numbers.
 ; SET 20001 with value of  number to be powerred and SET 2004 add with value of power.
 ; RESET OTHER unnecessary MEMORY BEFORE EXECUTION.
 ; REMEMBER TO SET MEMORY LOC TO 2000H; series.
@@ -23,7 +24,29 @@ MOV D,A;
 feriadd:ADD D;
 JNC NOcarry;
 
-STA 20A0H; store a to 2010H;
+
+JNZ pakh2kosameaayena;
+STA 20A0H;
+LDA 2010H;
+INR A;
+STA 2010H;
+claighata:DCR C;
+LDA 20A0h;
+JZ last;
+; b lai mileyako 
+ferib:LDA 2000H;
+MOV B,A;
+DCR B;
+
+LDA 2010h;
+MOV D,A;
+feri2add:ADD D;
+STA 2010H;
+DCR B;
+JNZ feri2add;
+JZ claighata;
+
+pakh2kosameaayena:STA 20A0H; store a to 2010H;
 MOV A,E;
 CMP B;
 JNZ aaileaddnagarne;
@@ -38,12 +61,10 @@ DCR L;
 JNZ ADDcarryuntil;
 STA 2010H; store it to same location.
 
-
 aaileaddnagarne: LDA 2010H;
 INR A;
 STA 2010H;
 LDA 20A0H;
-
 
 NOcarry:DCR E;
 JZ eis0; jump if E is 0;
