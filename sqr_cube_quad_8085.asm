@@ -1,10 +1,10 @@
 
-; REMEMBER 
-;ANSWER MUST CONTAIN WITHIN 4 digit numbers.
-; SET 20001 with value of  number to be powerred and SET 2004 add with value of power.
-; RESET OTHER unnecessary MEMORY BEFORE EXECUTION.
-; REMEMBER TO SET MEMORY LOC TO 2000H; series.
-;ANSWER WILL BE DISPLAYED ON 2010H and 2011H; 
+; POINTS TO REMEMBER 
+; REMEMBER TO SET MEMORY LOC TO 2000H; table .
+; ANSWER MUST CONTAIN WITHIN 4 digit numbers.
+; SET 2000H with value of  number to be powered and SET 2004H add with value of power.
+; RESET OTHER unnecessary MEMORY and FLAGS BEFORE EXECUTION.
+; ANSWER WILL BE DISPLAYED ON 2010H and 2011H; 
 
 MVI A,00H;
 STA 2010h;
